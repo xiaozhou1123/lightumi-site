@@ -38,9 +38,18 @@ docs/.vitepress/dist
 
 ## Deploy to GitHub Pages
 
-1. Push this repository to GitHub.
-2. Open the repository settings: `Settings` -> `Pages`.
-3. Set `Source` to `GitHub Actions`.
-4. Push to `main` or `master`, or run the `Deploy GitHub Pages` workflow manually.
+1. Make sure `.github/workflows/deploy.yml` is placed at the Git repository root.
+   If this folder is inside a parent repository, copy it to the parent folder:
+
+   ```powershell
+   cd C:\Users\W11\Desktop\site\lightumi-site
+   New-Item -ItemType Directory -Force ..\.github\workflows
+   Copy-Item .\.github\workflows\deploy.yml ..\.github\workflows\deploy.yml -Force
+   ```
+
+2. Push this repository to GitHub.
+3. Open the repository settings: `Settings` -> `Pages`.
+4. Set `Source` to `GitHub Actions`.
+5. Push to `main` or `master`, or run the `Deploy GitHub Pages` workflow manually.
 
 GitHub Actions will build the VitePress site and publish `docs/.vitepress/dist`.
