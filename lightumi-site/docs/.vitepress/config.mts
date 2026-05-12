@@ -4,7 +4,7 @@ export default defineConfig({
   title: 'LightUMI',
   description: 'Lightweight synchronized data acquisition for robot training',
   lang: 'zh-CN',
-  base: './',
+  base: process.env.BASE_PATH ?? '/',
   cleanUrls: false,
   lastUpdated: true,
   themeConfig: {
